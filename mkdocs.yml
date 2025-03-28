@@ -1,0 +1,83 @@
+site_name: My Documentation
+
+extra_javascript:
+  - assets/all.js
+extra_css:
+  - assets/extra.css
+
+theme:
+  name: 'material'
+
+  features:  
+    - navigation.tabs        # Hiển thị thanh bên trên
+    - navigation.tabs.sticky # Giữ thanh trên cố định khi cuộn
+    # - navigation.sections    # Cho phép các mục cha có con
+    # - toc.integrate          # Hợp nhất mục lục bên phải vào sidebar
+    - navigation.instant     # Load nhanh không tải lại trang
+    - navigation.path        # Hiển thị đường dẫn của trang
+    - navigation.indexes     # Cho phép mở rộng các mục con
+    # - navigation.expand      # (Comment dòng này nếu muốn mặc định thu nhỏ)
+    - navigation.top         # Nút trở lên đầu
+    - navigation.tracking    # Theo dõi mục đang đọc
+
+  palette:
+    - scheme: default  # Light Mode
+      primary: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    - scheme: slate  # Dark Mode
+      primary: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font:
+    text: Merriweather 
+    code: JetBrains Mono
+
+
+markdown_extensions:
+  - pymdownx.tasklist
+      # collapse: true  # Đảm bảo các mục trong <details> không tự mở
+
+  - admonition  # Hộp ghi chú
+  - pymdownx.details  # Mở rộng ghi chú
+  - pymdownx.superfences  # Hỗ trợ code block nâng cao
+  - pymdownx.highlight  # Làm đẹp code
+  - pymdownx.inlinehilite  # Code inline
+  - pymdownx.snippets  # Chèn file markdown
+  - pymdownx.tabbed  # Tab trong tài liệu
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+plugins:
+  - awesome-pages
+  # - mkdocs-jupyter:
+  #     execute: false  # Để không chạy lại notebook khi hiển thị
+  - search
+  - include-markdown
+  # - pdf-export
+  - minify:
+      minify_html: true
+  - glightbox
+
+nav:
+  - Home: 
+    - Home: index.md
+    - About: about.md
+
+  - Store:
+    - store/index.md
+    - Mô tả: store/guide.md
+    - DGCL: store/DGCL.md
+  
+  - BT-DSA: 
+    - dsa/index.md
+    - dsa/thuvienregex.md
+
+  - Other: other/other.md
