@@ -50,3 +50,7 @@ margin: 0 auto;
 .md-sidebar__inner .md-nav__list {
     display: block !important;
 }
+
+.equation-number {
+  float: right;
+}
